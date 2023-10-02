@@ -1,7 +1,8 @@
+from flask import render_template
 from app import app # second app is variable app from __init__.py
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello, World!" # Note that browser will convert
-                           # string into html document
+    user = {'username': 'Wesley'}
+    return render_template('index.html', title='Home', user=user)
